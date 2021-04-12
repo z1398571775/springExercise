@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="vueTest:war">
+    <output-path>$PROJECT_DIR$/vueTest/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>vueTest</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="vueTest.war">
+      <element id="artifact" artifact-name="vueTest:war exploded" />
+    </root>
+  </artifact>
+</component>

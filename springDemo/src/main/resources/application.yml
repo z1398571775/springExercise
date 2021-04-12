@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    username: yejidaxuesheng
+    password: Root123456
+    url: jdbc:mysql://rm-m5e9591dp3p323kgp3o.mysql.rds.aliyuncs.com:3306/springdemo?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+mybatis:
+  mapper-locations: classpath:com/example/demo/modules/**/mapper/xml/*.xml
+  type-aliases-package: com.example.demo.modules
