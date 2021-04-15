@@ -2,7 +2,6 @@ package com.example.demo.modules.system.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
 import java.io.Serializable;
 @Data
 public class Result<T> implements Serializable {
@@ -25,9 +24,9 @@ public class Result<T> implements Serializable {
     /**
      * 失败时生成result的方法
      */
-    public static <T> Result<T> error(int status, String msg){
+    public static <T> Result<T> error(String msg){
         Result<T> result = new Result<>();
-        result.setStatus(status);
+        result.setStatus(500);
         result.setMsg(msg);
         return result;
     }
