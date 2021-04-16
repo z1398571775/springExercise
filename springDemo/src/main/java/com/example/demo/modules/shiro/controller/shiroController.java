@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/shiro")
 public class shiroController {
     @PostMapping("/login")
-    public Result<JsonObject> doLogin(){
+    public Result<JsonObject> doLogin(String username,String password){
+
         return null;
     }
 }

@@ -3,8 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // axios全局配置
+        axios.defaults.baseURL = 'https://127.0.0.1:8080';
+    </script>
 </head>
 <body>
 <h1>dasdasdas</h1>
+<div id="app">
+    <form action="#" onsubmit="return false">
+        用户名:<input name="username" type="text" v-model="user.username" placeholder="请输入用户名">
+        密码: <input name="password" type="password" v-model="user.password" placeholder="请输入密码">
+        <input type="submit" value="提交" @onclick="doLogin()">
+    </form>
+</div>
+
+
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            user: {
+                username: "",
+                password: ""
+            }
+        },
+        methods: {
+             doLogin(){
+                axios.post('/shiro//login', {
+
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+    }
+    });
+
+
+</script>
 </body>
 </html>

@@ -2,10 +2,12 @@ package com.example.demo.modules.system.entity;
 
 import lombok.Data;
 
+import java.io.Serial;
 import java.io.Serializable;
 @Data
 public class Result<T> implements Serializable {
-    private static final long serialVersionUID = 1L;
+    @Serial
+    private static final long serialVersionUID = -259987908481986337L;
     /**
      * 错误码
      */
