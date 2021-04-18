@@ -21,6 +21,11 @@ public class Result<T> implements Serializable {
      */
     private T data;
 
+    /***
+     * 是否成功
+     */
+    private boolean isSuccess;
+
     /**
      * 失败时生成result的方法
      */

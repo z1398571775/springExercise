@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableJpaRepositories
 @EnableTransactionManagement
-public class jpaConfig {
+public class JpaConfig {
 
         @Bean
         public DataSource dataSource() {
