@@ -8,14 +8,25 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 @RequestMapping("/shiro")
 public class shiroController {
     @Autowired
     SystemUserService userService;
     @RequestMapping("/login")
+    public String turnLogin(){
+        return "login";
+    }
+
+    /***
+     * 登录验证
+     * @param user
+     * @return
+     */
+    @PatchMapping("/check")
     public Result<JsonObject> doLogin(@RequestBody SystemUser user){
         Result<JsonObject> result = new Result<>();
         result.setSuccess(userService.deLogin(user.getName(),user.getPassword()));
