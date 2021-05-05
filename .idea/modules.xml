@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/springDemo/demo.iml" filepath="$PROJECT_DIR$/springDemo/demo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/springDemo/springDemo.iml" filepath="$PROJECT_DIR$/springDemo/springDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/springExercise.iml" filepath="$PROJECT_DIR$/.idea/springExercise.iml" />
-      <module fileurl="file://$PROJECT_DIR$/vueTest/vueTest.iml" filepath="$PROJECT_DIR$/vueTest/vueTest.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,22 @@
+debug: true
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    username: yejidaxuesheng
+    password: Root123456
+    url: jdbc:mysql://rm-m5e9591dp3p323kgp3o.mysql.rds.aliyuncs.com:3306/springdemo?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+
+  jersey:
+    application-path: "/api"
+mybatis-plus:
+  mapper-locations: "classpath*:com/example/demo/moduls/**/mapper/xml/**Mapper.xml"
+  global-config:
+    db-config:
+      id-type: assign_uuid
