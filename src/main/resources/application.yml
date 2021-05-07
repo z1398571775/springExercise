@@ -1,5 +1,12 @@
 debug: true
+server:
+  servlet:
+    context-path: /api
 spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
   jpa:
     show-sql: true
   datasource:
@@ -12,9 +19,6 @@ spring:
       initial-size: 5
       min-idle: 5
       max-active: 20
-
-  jersey:
-    application-path: "/api"
 mybatis-plus:
   mapper-locations: "classpath*:com/example/demo/moduls/**/mapper/xml/**Mapper.xml"
   global-config:
