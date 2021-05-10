@@ -9,9 +9,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class RedisServiceImpl implements RedisService {
     @Autowired
-    StringRedisTemplate stringTemplate;
+    RedisTemplate redisTemplate;
     @Override
     public void addString(String key, String value) {
-        stringTemplate.opsForValue().set(key,value);
+        redisTemplate.opsForValue().set(key,value);
+    }
+
+    @Override
+    public void deleteString(String key) {
+        redisTemplate.delete(key);
     }
 }

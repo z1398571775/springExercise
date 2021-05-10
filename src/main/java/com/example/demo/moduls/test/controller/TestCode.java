@@ -15,8 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/test")
-@Api(value = "测试")
-@ApiModel("测试一下")
+@Api("测试")
 public class TestCode {
     @Autowired
     RedisService redisService;

@@ -1,5 +1,6 @@
 package com.example.demo.moduls.Systerm.entity;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
@@ -21,14 +22,15 @@ public class SystemUser implements Serializable {
     private static final long serialVersionUID = 4467142000287072643L;
     @Id
     @TableId
-    @ApiModelProperty(value = "唯一标识",name = "id",dataType = "String",notes = "自动生成uuid")
+    @ApiModelProperty(value = "唯一标识")
     private String id;
-    @ApiModelProperty(value = "用户的名字",name = "name",dataType = "String")
+    @ApiModelProperty(value = "用户的名字")
     private String name;
-    @ApiModelProperty(value = "用户密码",name = "password",dataType = "String")
+    @ApiModelProperty(value = "用户密码")
     private String password;
-    @ApiModelProperty(value = "用户角色",name = "role",dataType = "String")
+    @ApiModelProperty(value = "用户角色")
     private String role;
-    @ApiModelProperty(value = "创建时间",name = "createtime",dataType = "Date")
+    @ApiModelProperty(value = "创建时间")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     private Date createtime;
 }

@@ -7,8 +7,6 @@ import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableOpenApi
-@EnableSwagger2
 @EnableConfigurationProperties
 public class DemoApplication {
 

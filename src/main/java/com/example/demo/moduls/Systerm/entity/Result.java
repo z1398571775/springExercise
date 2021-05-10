@@ -2,6 +2,7 @@ package com.example.demo.moduls.Systerm.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiOperation;
 import lombok.Data;
 
 import java.io.Serial;
@@ -12,10 +13,28 @@ import java.io.Serializable;
 public class Result<T> implements Serializable {
     @Serial
     private static final long serialVersionUID = -4998400090545719026L;
-    @ApiModelProperty(value = "状态码",name = "code",dataType = "Integer")
+    @ApiModelProperty(value = "状态码")
     private Integer code;
-    @ApiModelProperty(value = "返回的消息",name = "msg",dataType = "String")
+    @ApiModelProperty(value = "返回的消息")
     private String msg;
-    @ApiModelProperty(value = "返回的数据",name = "data",dataType = "T",notes = "一般为实体对象")
+    @ApiModelProperty(value = "返回的数据")
     private T data;
+    @ApiModelProperty(value = "是否成功")
+    private boolean isSuccess;
+
+    public Result<T> success(String message){
+        Result<T> result = new Result<>();
+        result.setSuccess(true);
+        result.setMsg(message);
+        result.setCode(200);
+        return result;
+    }
+
+    public Result<T> error(String message){
+        Result<T> result = new Result<>();
+        result.setSuccess(false);
+        result.setMsg(message);
+        result.setCode(500);
+        return result;
+    }
 }

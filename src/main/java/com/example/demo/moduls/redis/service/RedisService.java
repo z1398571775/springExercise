@@ -18,4 +18,10 @@ public interface RedisService {
      * @param value
      */
     void addString(String key,String value);
+
+    /***
+     * 根据key删除对应的值
+     * @param key
+     */
+    void deleteString(String key);
 }
