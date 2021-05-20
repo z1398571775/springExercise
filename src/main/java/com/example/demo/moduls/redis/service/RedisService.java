@@ -6,10 +6,6 @@ package com.example.demo.moduls.redis.service;
 public interface RedisService {
 
     /***
-     * Redis列表操作
-     */
-
-    /***
      * Redis 字符串操作
      */
     /***
@@ -23,5 +19,5 @@ public interface RedisService {
      * 根据key删除对应的值
      * @param key
      */
-    void deleteString(String key);
+    boolean deleteString(String key);
 }

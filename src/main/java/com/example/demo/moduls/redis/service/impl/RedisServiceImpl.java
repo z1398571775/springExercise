@@ -16,7 +16,7 @@ public class RedisServiceImpl implements RedisService {
     }
 
     @Override
-    public void deleteString(String key) {
-        redisTemplate.delete(key);
+    public boolean deleteString(String key) {
+        return redisTemplate.delete(key);
     }
 }
