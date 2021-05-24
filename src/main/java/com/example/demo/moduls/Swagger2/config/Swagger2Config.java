@@ -1,4 +1,4 @@
-package com.example.demo.moduls.Systerm.config;
+package com.example.demo.moduls.Swagger2.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;

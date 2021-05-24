@@ -8,10 +8,19 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        super.configure(http);
+//        super.configure(http);
+
+        //转到登录页面
         http
                 .formLogin()
-                .loginPage("/login/login.html");
+                .loginPage("/login/goLogin");
+        //拦截请求
+        http
+                .authorizeRequests()
+                .antMatchers("/login/goLogin").permitAll()
+                .anyRequest().authenticated();
+
+
 
     }
 }

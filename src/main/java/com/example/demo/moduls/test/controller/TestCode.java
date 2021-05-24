@@ -3,8 +3,8 @@ package com.example.demo.moduls.test.controller;
 import com.example.demo.moduls.Systerm.entity.Result;
 import com.example.demo.moduls.Systerm.entity.SystemUser;
 import com.example.demo.moduls.redis.service.RedisService;
+import com.example.demo.moduls.test.mapper.TestMaper;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestCode {
     @Autowired
     RedisService redisService;
+    @Autowired
+    TestMaper testMaper;
     @GetMapping("/test")
     @ApiOperation(value = "测试方法")
     public Result<SystemUser> testcoe(@RequestBody(required = false) @ApiParam(name = "用户对象",value = "测试",required = false) SystemUser user){

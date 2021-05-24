@@ -1,11 +1,15 @@
 package com.example.demo.moduls.Systerm.controller;
 
-import com.example.demo.moduls.Systerm.entity.Result;
 import io.swagger.annotations.Api;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@RestController
+@Controller
+@RequestMapping("/login")
 @Api("用户登录控制")
 public class SystemUserController {
-
+    @RequestMapping("/goLogin")
+    public String turnLogin(){
+        return "login";
+    }
 }
