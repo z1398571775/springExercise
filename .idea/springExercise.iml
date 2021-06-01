@@ -18,6 +18,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="entityManagerFactory" />
+          <factory-entry name="springExercise" value="4bbad02c-1df7-403d-a332-588a84123e45" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
