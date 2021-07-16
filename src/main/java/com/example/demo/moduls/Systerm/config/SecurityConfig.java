@@ -12,15 +12,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        super.configure(http);
 
         //转到登录页面
-        http
-                .formLogin()
-                .loginPage("/login/goLogin");
+//        http
+//                .formLogin()
+//                .loginPage("/login/goLogin");
         //拦截请求
         http
                 .authorizeRequests()
                 .antMatchers("/login/goLogin").permitAll()
                 .anyRequest().authenticated();
     }
+//        http
+//                .authorizeRequests()
+//                .antMatchers("/login/goLogin").permitAll()
+//                .anyRequest().authenticated();
 
     @Override
     public void configure(WebSecurity web) throws Exception {

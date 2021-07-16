@@ -7,6 +7,10 @@ import com.example.demo.moduls.test.mapper.TestMaper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.apache.http.HttpHost;
+import org.elasticsearch.client.Request;
+import org.elasticsearch.client.Response;
+import org.elasticsearch.client.RestClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,4 +33,26 @@ public class TestCode {
         redisService.addString("test","123");
         return result;
     }
+
+
+    @GetMapping("/search")
+    @ApiOperation(value = "测试搜索")
+    public Result<SystemUser> search(@RequestBody(required = false) @ApiParam(name = "用户对象",value = "测试",required = false) SystemUser user){
+        System.out.println("123");
+        Result<SystemUser> result = new Result<>();
+        RestClient restClient = RestClient.builder(
+                new HttpHost("127.0.0.1", 9200, "http"),
+                new HttpHost("localhost", 9201, "http")).build();
+        try{
+        Request request = new Request(
+                "GET",
+                "/");
+        Response response = restClient.performRequest(request);
+        System.out.println(response);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return result;
+    }
+
 }

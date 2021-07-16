@@ -167,6 +167,13 @@
             <artifactId>lettuce-core</artifactId>
             <version>6.1.1.RELEASE</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.elasticsearch.client/elasticsearch-rest-client -->
+        <dependency>
+            <groupId>org.elasticsearch.client</groupId>
+            <artifactId>elasticsearch-rest-client</artifactId>
+            <version>7.13.3</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -190,6 +197,37 @@
                     <source>15</source>
                     <target>15</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>shade</goal></goals>
+                        <configuration>
+                            <relocations>
+                                <relocation>
+                                    <pattern>org.apache.http</pattern>
+                                    <shadedPattern>hidden.org.apache.http</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.apache.logging</pattern>
+                                    <shadedPattern>hidden.org.apache.logging</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.apache.commons.codec</pattern>
+                                    <shadedPattern>hidden.org.apache.commons.codec</shadedPattern>
+                                </relocation>
+                                <relocation>
+                                    <pattern>org.apache.commons.logging</pattern>
+                                    <shadedPattern>hidden.org.apache.commons.logging</shadedPattern>
+                                </relocation>
+                            </relocations>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
